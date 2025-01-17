@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: rgb(82,82,82);
+    background: radial-gradient(circle, rgba(82,82,82,1) 7%, rgba(220,220,220,1) 89%);
+    background: linear-gradient(90deg, rgba(220,220,220,1) 22%, rgb(161, 157, 157) 71%);
+
+}
+
+
+
+.bo{
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.bg-gradient{
+    background: rgb(82,82,82);
+background: radial-gradient(circle, rgba(82,82,82,1) 7%, rgba(220,220,220,1) 89%);
+background: linear-gradient(90deg, rgba(220,220,220,1) 22%, rgb(161, 157, 157) 71%);
+}
+
+.bg-gradient2{
+    background: rgb(82,82,82);
+background: linear-gradient(90deg, rgba(82,82,82,1) 51%, rgb(131, 125, 125) 96%);
+}
+
+
+/* Add this to your global styles */
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit-based browsers */
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+  
+
+.form-bg{
+
+    opacity: 70%;
+
+
+}
