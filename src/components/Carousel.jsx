@@ -25,21 +25,21 @@ const Carousel = () => {
     <>
 
 
-    <div className="flex flex-col gap-6   p-4 lg:p-12 font-primary">
+    <div className="flex flex-col gap-6   py-4 lg:p-12 font-primary">
 
       <h1 
-       className="text-lg lg:text-2xl text-tertiary-900  font-bold "
+       className="text-lg lg:text-2xl text-tertiary-900 px-4  font-bold "
       >Highlights of Our Work</h1>
 
-    <div className="flex flex-col lg:flex-row  select-none">
+    <div className="px-2 flex flex-col-reverse gap-5 lg:gap-0 lg:flex-row  select-none">
 
       <div 
       
-      className=" flex-1 flex flex-col  justify-around items-center gap-4  ">
+      className="  flex lg:flex-col  justify-around items-center gap-4  ">
       {/* <p className="text-2xl text-tertiary-900 font-bold">{images[currentIndex].name}</p> */}
 
       {/* Navigation Buttons */}
-      <div className="flex flex-col gap-4">
+      <div className="flex lg:flex-col gap-4">
         {images.map((image, index) => (
           <button
             key={image.id}
@@ -60,13 +60,13 @@ const Carousel = () => {
       </div>
 
       {/* Carousel Image */}
-      <div className=" relative lg:w-[800px] h-96  mx-auto overflow-hidden ">
+      <div className=" relative w-full lg:w-[800px] h-48 lg:h-96  mx-auto overflow-hidden ">
         {images.map((image, index) => (
           <img
             key={image.id}
             src={image.src}
             alt={image.name}
-            className={`absolute inset-0 w-full h-full object-fill object-top cursor-pointer transition-opacity duration-500 ${
+            className={`absolute inset-0 rounded-md w-full h-full object-fill object-top cursor-pointer transition-opacity duration-500 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
 
@@ -74,7 +74,7 @@ const Carousel = () => {
           />
         ))}
 
-    <p className="absolute top-5 left-5 bg-transparent backdrop-blur-xl text-2xl text-tertiary-900 font-bold">{images[currentIndex].name}</p>
+    <p className="absolute top-0 left-0 px-2 py-2 lg:top-5 lg:left-5 bg-transparent backdrop-blur-xl text-sm lg:text-2xl text-tertiary-900 font-bold">{images[currentIndex].name}</p>
 
       </div>
 

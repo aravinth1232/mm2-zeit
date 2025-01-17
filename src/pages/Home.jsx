@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import homeimg1 from "../assets/homeimg1.png";
 // import homeimg1 from "../assets/homeimg2.jpeg";
 
@@ -24,10 +24,18 @@ import Carousel from '../components/Carousel';
 
 const Home = () => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
+
 const border = "rounded-[50px] "
 
   return (
-     <main className='overscroll-none bg-gradient h-svh lg:h-screen  font-primary   '>
+     <main className='max-w-screen-2xl mx-auto overscroll-none bg-gradient h-svh lg:h-screen  font-primary   '>
 
       {/* home page above lg  */}
       <div 
@@ -57,7 +65,7 @@ const border = "rounded-[50px] "
       </div>
 
     <div className=' z-20 flex-1  flex justify-end cursor-pointer'>
-      <div className=' relative w-full lg:w-[80vw] h-auto overflow-hidden group '>
+      <div className=' relative w-full  lg:w-[90vw] max-w-screen-2xl h-auto overflow-hidden group '>
         
         <motion.img
         //  whileHover={{ scale: 1.1 }}
@@ -126,8 +134,10 @@ const border = "rounded-[50px] "
       <Stats />
       <WhyUs />
 
+        <div className='py-4'>
+            <Carousel />
+              </div>
 
-        <Carousel />
 
        <Footer />
     

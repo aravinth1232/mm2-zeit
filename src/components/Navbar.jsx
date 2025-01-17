@@ -178,15 +178,15 @@ const Navbar = () => {
         to={path}
         className={`w-full flex items-center justify-between px-4 py-3 gap-2 rounded font-medium group active:scale-95 transition-all duration-200  ${
           path === currentPath
-            ? "font-semibold text-tertiary-200 border-b"
-            : "hover:text-tertiary-200 text-tertiary-300 border-b"
+            ? "font-semibold text-tertiary-200 "
+            : "hover:text-tertiary-200 text-tertiary-300 "
         }`}
       >
        
         {/* {path === currentPath && <Icon className="w-6 h-6" />} */}
    
         <h1 className="text-base font-primary">{name}</h1>
-        {path === currentPath &&  <Dot className="w-6 h-6"  /> }  
+        {path === currentPath &&  <Dot className="w-10 h-10"  /> }  
       </Link>
     ))}
   </nav>  

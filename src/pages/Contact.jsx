@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Location from '../components/Location'
 import Faq from '../components/Faq'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
 
 const Contact = () => {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
+
+
   return (
     <>
-    <main className=' bg-tertiary-100'>
+    <main className='max-w-screen-2xl mx-auto bg-tertiary-100'>
     
     <div className=''>
     <Location />

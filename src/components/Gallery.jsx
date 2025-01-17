@@ -37,11 +37,11 @@ const Gallery = () => {
       >Our Works Till Date</h1>
     </div>
 
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 p-1 font-primary ">
+    <div className="self-center grid grid-cols-2 lg:grid-cols-4 gap-1 p-1 font-primary ">
       {images.map((image, index) => (
         <div
           key={index}
-          className={`relative group w-full  lg:h-[400px] overflow-hidden  rounded-md cursor-pointer
+          className={`relative group w-full  lg:h-[350px] overflow-hidden  rounded-md cursor-pointer
             
             ${image.id === 5 || image.id === 10 ? "col-span-2 row-span-1" : ""}
 
