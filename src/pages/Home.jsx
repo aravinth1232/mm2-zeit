@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 // import homeimg1 from "../assets/homeimg1.png";
 // import homeimg1 from "../assets/homeimg2.jpeg";
 
@@ -8,6 +8,8 @@ import homeimg3 from "../assets/onemob.png";
 import image1 from "../assets/1.png"
 import image2 from "../assets/2.png"
 import image3 from "../assets/3.png"
+import Lenis from 'lenis';
+import { useScroll} from "framer-motion";
 
 
 
@@ -20,7 +22,14 @@ import Stats from '../components/Stats';
 import Footer from '../components/Footer';
 import ParallaxSection from '../components/ParallaxSection';
 import Carousel from '../components/Carousel';
+import CascadeSlider from '../components/CascadeSlider';
 
+
+const images = [
+  image1,
+  image2,
+  image3,
+];
 
 const Home = () => {
 
@@ -32,10 +41,43 @@ const Home = () => {
   }, []);
 
 
+  
+  const container = useRef();
+  // const { scrollYProgress } = useScroll({
+  //   target: container,
+  //   offset: ["start start", "end end"]
+  // }) 
+
+  useEffect( () => {
+    
+
+    const lenis = new Lenis({
+      duration: 1.2, // Smooth scroll duration
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      smooth: true, // Enable smooth scroll
+    });
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, [])
+
+
+
 const border = "rounded-[50px] "
 
   return (
-     <main className='max-w-screen-2xl mx-auto overscroll-none bg-gradient h-svh lg:h-screen  font-primary   '>
+     <main 
+     ref={container}
+     
+     className='max-w-screen-2xl mx-auto overscroll-none bg-gradient h-svh lg:h-screen  font-primary   '>
 
       {/* home page above lg  */}
       <div 
@@ -137,6 +179,13 @@ const border = "rounded-[50px] "
         <div className='py-4'>
             <Carousel />
               </div>
+
+    <div 
+    
+    // className="container mx-auto"
+    >
+      <CascadeSlider  />
+    </div>
 
 
        <Footer />

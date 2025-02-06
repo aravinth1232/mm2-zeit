@@ -3,14 +3,16 @@ import { useInView } from "react-intersection-observer";
 // import { div } from 'framer-motion/client'
 import { BookOpenCheck, ClockAlert, Waypoints } from 'lucide-react'
 import { symbol } from "framer-motion/client";
+import { FaInstagram } from "react-icons/fa6";
 
 const Stats = () => {
 
 
     const stats = [
+        {value: "2",symbol: "+", description: "Years in Field", icon: ClockAlert},
         {value: "20",symbol: "+",  description: "Projects Done", icon: Waypoints},
-        {value: "2",symbol: "k", description: "Great Reviews", icon: BookOpenCheck},
-        {value: "20",symbol: "k", description: "Work Hours", icon: ClockAlert},
+        {value: "36",symbol: "k", description: "Followings", icon: FaInstagram},
+       
     ]
     
     const { ref, inView } = useInView({ threshold: 0.5 });
@@ -65,7 +67,7 @@ const Stats = () => {
         
         <div
         key={index}
-        className='flex flex-row gap-3 lg:gap-3  '>
+        className='flex flex-row gap-2 lg:gap-3  '>
 
         <div>
             <Icon className='w-7 h-7 lg:w-10 lg:h-10 text-tertiary-700' />

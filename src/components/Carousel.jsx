@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import image1 from "../assets/1.png"
-import image2 from "../assets/2.png"
-import image3 from "../assets/3.png"
+import image1 from "../assets/13.png"
+import image2 from "../assets/14.png"
+import image3 from "../assets/15.png"
 
 const Carousel = () => {
   const images = [
@@ -25,13 +25,13 @@ const Carousel = () => {
     <>
 
 
-    <div className="flex flex-col gap-6   py-4 lg:p-12 font-primary">
+    <div className="flex lg:hidden flex-col gap-6   py-4 lg:p-12 font-primary">
 
       <h1 
        className="text-lg lg:text-2xl text-tertiary-900 px-4  font-bold "
       >Highlights of Our Work</h1>
 
-    <div className="px-2 flex flex-col-reverse gap-5 lg:gap-0 lg:flex-row  select-none">
+    <div className="px-2 flex flex-col gap-5 lg:gap-0 lg:flex-row  select-none">
 
       <div 
       
@@ -60,13 +60,13 @@ const Carousel = () => {
       </div>
 
       {/* Carousel Image */}
-      <div className=" relative w-full lg:w-[800px] h-48 lg:h-96  mx-auto overflow-hidden ">
+      <div className=" relative w-full lg:w-[800px] h-72 lg:h-96  mx-auto overflow-hidden ">
         {images.map((image, index) => (
           <img
             key={image.id}
             src={image.src}
             alt={image.name}
-            className={`absolute inset-0 rounded-md w-full h-full object-fill object-top cursor-pointer transition-opacity duration-500 ${
+            className={`absolute inset-0 rounded-md w-full h-full object-cover  cursor-pointer transition-opacity duration-500 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
 

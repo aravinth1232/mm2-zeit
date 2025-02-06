@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronDownCircle } from 'lucide-react';
+import { ChevronDown, ChevronDownCircle, Plus } from 'lucide-react';
 import React, { useState } from 'react';
 
 
@@ -50,7 +50,7 @@ const Faq = () => {
   return (
     <section className=" font-primary flex flex-col  gap-8 px-4 py-8">
       <h2 className="text-2xl font-semibold  text-tertiary-900  font-karla">Frequently Asked Questions</h2>
-      <div className="px-2 lg:px-8 grid lg:grid-cols-2 gap-8 ">
+      <div className="px-2 lg:px-8 grid lg:grid-cols-2 gap-12 ">
         {faqData.map((item, index) => (
           <div key={index} className=" pb-4">
             <button
@@ -60,9 +60,9 @@ const Faq = () => {
             >
               {item.question}
               <span className={`transition-transform transform
-                group-hover:text-tertiary-400 
-                ${activeIndex === index ? '-rotate-0' : '-rotate-45'}`}>
-                <ChevronDown  />
+                group-hover:text-tertiary-500 duration-500
+                ${activeIndex === index ? 'rotate-45' : '-rotate-0'}`}>
+                <Plus />
               </span>
             </button>
             <div
