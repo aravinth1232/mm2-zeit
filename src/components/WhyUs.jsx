@@ -56,7 +56,7 @@ const WhyUs = () => {
       }}
       initial={{ opacity: 0 }}
       animate={controls}
-      className="relative font-primary bg-gradient2  p-4 lg:p-12 text-white  overflow-hidden"
+      className="relative font-primary bg-white  p-4 lg:p-12 text-white  overflow-hidden"
     >
       {/* SVG Mask */}
       {/* <img
@@ -69,7 +69,7 @@ const WhyUs = () => {
         ref={sectionRef}
         initial={{ x: 50, opacity: 0 }}
         animate={titleControls}
-        className="text-lg lg:text-2xl text-tertiary-100  font-bold  lg:mb-3 relative z-10"
+        className="text-lg lg:text-2xl text-tertiary-900  font-bold  lg:mb-3 relative z-10"
       >
         Why Motomod?
       </motion.h2>
@@ -81,19 +81,19 @@ const WhyUs = () => {
             initial={{ x: 50, opacity: 0 }}
             animate={itemsControls}
             whileHover={{
-                scale: 1.2, // Slight zoom effect
+                scale: 1.1, // Slight zoom effect
                 rotateX: 10, // Tilt upwards
-                rotateY: 15,  // Tilt sideways
+                rotateY: 10,  // Tilt sideways
                 transition: { duration: 0.2, ease: 'easeOut' },
               }}
               style={{
-                perspective: 1000, // Add perspective for 3D effect
+                perspective: 400, // Add perspective for 3D effect
                 transformStyle: 'preserve-3d', // Preserve child transformations
               }}
             className="bg-transparent backdrop-blur-md flex flex-col justify-start items-start gap-5 two shadow-lg rounded-lg px-4 py-6 cursor-pointer"
           >
-            <h3 className="text-base lg:text-lg font-semibold font-karla text-tertiary-100 ">{item.title}</h3>
-            <p className="text-sm lg:text-base font-inconsolata text-tertiary-300 ">{item.description}</p>
+            <h3 className="text-base lg:text-lg font-semibold font-karla text-tertiary-800 ">{item.title}</h3>
+            <p className="text-sm lg:text-base font-inconsolata text-tertiary-600 ">{item.description}</p>
           </motion.div>
         ))}
       </div>

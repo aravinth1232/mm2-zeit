@@ -23,6 +23,7 @@ import Footer from '../components/Footer';
 import ParallaxSection from '../components/ParallaxSection';
 import Carousel from '../components/Carousel';
 import CascadeSlider from '../components/CascadeSlider';
+import Offer from '../components/Offer';
 
 
 const images = [
@@ -33,12 +34,12 @@ const images = [
 
 const Home = () => {
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    window.onbeforeunload = () => {
-      window.scrollTo(0, 0);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   window.onbeforeunload = () => {
+  //     window.scrollTo(0, 0);
+  //   };
+  // }, []);
 
 
   
@@ -48,26 +49,26 @@ const Home = () => {
   //   offset: ["start start", "end end"]
   // }) 
 
-  useEffect( () => {
+  // useEffect( () => {
     
 
-    const lenis = new Lenis({
-      duration: 1.2, // Smooth scroll duration
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
-      smooth: true, // Enable smooth scroll
-    });
+  //   const lenis = new Lenis({
+  //     duration: 1.2, // Smooth scroll duration
+  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+  //     smooth: true, // Enable smooth scroll
+  //   });
 
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+  //   function raf(time) {
+  //     lenis.raf(time)
+  //     requestAnimationFrame(raf)
+  //   }
 
-    requestAnimationFrame(raf);
+  //   requestAnimationFrame(raf);
 
-    return () => {
-      lenis.destroy();
-    };
-  }, [])
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, [])
 
 
 
@@ -77,99 +78,47 @@ const border = "rounded-[50px] "
      <main 
      ref={container}
      
-     className='max-w-screen-2xl mx-auto overscroll-none bg-gradient h-svh lg:h-screen  font-primary   '>
+     className='max-w-screen-2xl mx-auto overscroll-none bg-sitewhite h-svh lg:h-screen  font-primary   '>
 
-      {/* home page above lg  */}
-      <div 
-      className=' px-4 hidden h-screen relative lg:flex flex-row w-full    gap-5 py-4 '
-      >
-
-      
-      <div className=' absolute top-[20%]   left-10  z-40 h-auto  flex flex-col gap-6 '>
-        <h1 className=' bg-transparent backdrop-blur-sm  lg:text-tertiary-800  lg:text-5xl font-bold uppercase leading-[9rem] w-3/4 '>
-         Customization of Bikes as you  Like</h1>
-        <p className=' bg-transparent backdrop-blur-sm  lg:text-tertiary-400  lg:text-base font-bold  leading-[9rem] w-3/4 '>
-        Bring your bike to life with our expert touch. From design tweaks to full transformations, we make every ride an experience to remember! 
+      {/* home page */}
+      <div className='px-4 py-8 flex flex-col lg:flex-row w-full gap-5 h-auto  items-center'>
+      {/* Text Section */}
+      <div className='z-40 flex flex-col gap-4 text-center lg:text-left w-full lg:w-1/2'>
+        <h1 className='bg-transparent backdrop-blur-sm text-tertiary-800 text-3xl lg:text-5xl font-bold uppercase leading-tight'>
+          Customization of Bikes as You Like
+        </h1>
+        <p className='bg-transparent backdrop-blur-sm text-tertiary-400 text-sm lg:text-base font-bold leading-relaxed'>
+          Bring your bike to life with our expert touch. From design tweaks to full transformations, we make every ride an experience to remember!
         </p>
-
-        <Link 
-        
-        to="/services">
-        <motion.button 
-    aria-label="Modify your bike now"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-    className={`z-20 text-sm lg:text-lg font-bold font-primary bg-gradient2 px-4 py-2 ${border} text-tertiary-100 flex flex-row items-center gap-1 group transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary`}>
-    <h1>Modify now</h1> 
-    <ChevronsRight className=' transition-all duration-200' />
-</motion.button>
-        </Link>
-      </div>
-
-    <div className=' z-20 flex-1  flex justify-end cursor-pointer'>
-      <div className=' relative w-full  lg:w-[90vw] max-w-screen-2xl h-auto overflow-hidden group '>
-        
-        <motion.img
-        //  whileHover={{ scale: 1.1 }}
-        //  whileHover={{ y: -10 }}
-         className=" absolute inset-0 w-full h-full  lg:object-cover transition-opacity duration-300 block lg:group-hover:hidden ease-linear "
-        loading='lazy'
-        
-        src={homeimg1} alt="homeimg" />
-        
-        <motion.img
-        // whileHover={{ y: -10 }}
-        //  whileHover={{ scale: 1.1 }}
-         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 hidden lg:group-hover:block ease-linear "
-        loading='lazy'
-        src={homeimg2} alt="homeimg" />
-
-
-
-        
-      
-      </div>
-
-    </div>  
-
-
-      </div>
-      
-
-    {/* hoem page below lg  */}
-      <div 
-      className=' lg:hidden  flex  flex-col w-full h-full    gap-5 py-4  '
-      >
-     <div className='px-4  flex flex-col gap-6  '>
-        <h1 className='  text-tertiary-800  text-3xl font-bold uppercase leading-[3rem] '>
-         Customization of Bikes as you  Like</h1>
-        <Link 
-        className=' w-fit'
-                to="/services">
-        <motion.button 
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className={` z-20 text-sm lg:text-lg font-bold font-primary bg-gradient2  px-4 py-2 ${border} text-tertiary-100 `}>
-          Modify now
-        </motion.button>
-        </Link>
-      </div>
-
-      <div className='flex-1  w-full  h-auto overflow-hidden  '>
-        
-        <motion.img
-        //  whileHover={{ scale: 1.1 }}
-        //  whileHover={{ y: -10 }}
-         className="   w-full h-full  object-cover transition-opacity duration-300 block lg:group-hover:hidden ease-linear "
-        loading='lazy'
-        
-        src={homeimg3} alt="homeimg" />
+        <div className="flex justify-center lg:justify-start">
+          <Link to="/services">
+            <motion.button 
+              aria-label="Modify your bike now"
+              // className='z-20 text-sm lg:text-lg font-bold bg-gradient2 px-4 py-2 text-tertiary-100 flex items-center gap-2 transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary'
+              className={`z-20 text-sm lg:text-lg font-bold font-primary bg-gradient2 px-4 py-2 ${border} text-tertiary-100 flex flex-row items-center gap-1 group transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary`}
+              >
+              <span>Modify now</span>
+              <ChevronsRight className='transition-all duration-200' />
+            </motion.button>
+          </Link>
         </div>
-
-
-
       </div>
       
+      {/* Image Section */}
+      <div className='z-20 w-full lg:w-1/2 flex justify-center lg:justify-end'>
+        <div className='relative w-full max-w-screen-md lg:max-w-screen-2xl h-auto overflow-hidden'>
+          <motion.img 
+            className='w-full h-auto object-cover transition-opacity duration-300 ease-linear'
+            loading='lazy'
+            src={homeimg1} 
+            alt="Bike Customization"
+          />
+        </div>
+      </div>
+    </div>
+
+    
+           
 
 
 
@@ -186,7 +135,10 @@ const border = "rounded-[50px] "
     >
       <CascadeSlider  />
     </div>
+    <div className='py-4'>
+    <Offer />
 
+    </div>
 
        <Footer />
     

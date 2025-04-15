@@ -54,7 +54,7 @@ const Stats = () => {
     <>
     <section 
     ref={ref}
-    className='flex flex-col gap-6  bg-tertiary-100 px-4 py-6 lg:px-12 lg:py-12 font-primary
+    className='flex flex-col gap-6  bg-sitegrey2 px-4 py-6 lg:px-12 lg:py-12 font-primary
     
     '>
 
@@ -63,7 +63,7 @@ const Stats = () => {
 
         <div className=' grid grid-cols-3  place-items-start lg:place-items-center gap-3 lg:gap-4 '>
         {
-        stats.map(({symbol,description,icon:Icon},index )=>(
+        stats.map(({value,symbol,description,icon:Icon},index )=>(
         
         <div
         key={index}
@@ -74,7 +74,8 @@ const Stats = () => {
 
         </div>
         <div className='flex flex-col gap-1 lg:gap-1  '>
-            <h1 className='text-xl lg:text-4xl font-semibold text-tertiary-900'> {`${counts[index]}${symbol}`}</h1>
+        <h1 className='text-xl lg:text-4xl font-semibold text-tertiary-900'> {`${value}${symbol}`}</h1>
+            {/* <h1 className='text-xl lg:text-4xl font-semibold text-tertiary-900'> {`${counts[index]}${symbol}`}</h1> */}
             <p className='text-xs lg:text-lg font-medium text-tertiary-500'>{description}</p>
         </div>
 

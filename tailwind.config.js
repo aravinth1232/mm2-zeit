@@ -10,6 +10,10 @@ export default {
         300: '300px',
       },
       colors:{
+        'siteblack': "#121212",
+        'sitewhite' : "#FCFCFC",
+        'sitegrey' : "#999999",
+        'sitegrey2' : "#f2f2f2",
         'primary' :"#464646",
         'secondary': "hsl(345, 100%, 37%)",
         'tertiary': {
