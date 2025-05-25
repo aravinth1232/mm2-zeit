@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react'
 // import homeimg1 from "../assets/homeimg1.png";
 // import homeimg1 from "../assets/homeimg2.jpeg";
 
-import homeimg1 from "../assets/one.png";
+// import homeimg1 from "../assets/one.png";
+import homeimg1 from "../assets/hero12.svg";
 import homeimg2 from "../assets/onenew.png";
 import homeimg3 from "../assets/onemob.png";
 import image1 from "../assets/1.png"

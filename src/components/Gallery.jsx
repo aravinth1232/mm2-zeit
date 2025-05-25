@@ -10,10 +10,11 @@ import image8 from "../assets/8.png"
 import image9 from "../assets/9.png"
 import image10 from "../assets/10.png"
 import { ArrowUpRight, ChevronDown, ChevronUp, ExternalLink, MoveUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Gallery = () => {
   const images = [
-    {id:1, src: image1 , name: "White Scaven" },
+    {id:1, src: image1 , name: "White Scaven" , path : "white-scaven" },
     {id:2, src: image2, name: "Black Horse" },
     {id:3, src:image3, name: "Pulsar 150" },
     {id:4, src:  image4, name: "Pulsar 150" },
@@ -25,6 +26,8 @@ const Gallery = () => {
     {id:10, src:  image10, name: "Apache RTR 160" },
 
   ];
+
+  const navigate = useNavigate();
 
   return (
     
@@ -40,8 +43,13 @@ const Gallery = () => {
     <div className="self-center grid grid-cols-2 lg:grid-cols-4 gap-1 p-1 font-primary ">
       {images.map((image, index) => (
         <div
+          onClick={()=> {
+            // navigate(`/services/product/${image.path}`)
+            navigate(`/services/product/white-scaven`)
+            
+          }}
           key={index}
-          className={`relative group w-full  lg:h-[350px] overflow-hidden  rounded-md cursor-pointer 
+          className={`relative  group w-full  lg:h-[350px] overflow-hidden  rounded-md cursor-pointer 
             
             ${image.id === 5 || image.id === 10 ? "col-span-2 row-span-1" : ""}
 
@@ -50,7 +58,7 @@ const Gallery = () => {
           <img
             src={image.src}
             alt={image.name}
-            className="w-full h-full object-cover opacity-90 group-hover:opacity-80  group-hover:scale-105 transition-all duration-[500ms]"
+            className="w-full  h-full object-cover opacity-90 group-hover:opacity-80  group-hover:scale-105 transition-all duration-[500ms]"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-tertiary-900 rounded-md bg-opacity-30 flex py-3 items-start justify-between px-4 translate-y-full

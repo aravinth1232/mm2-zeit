@@ -9,6 +9,7 @@ import Contact from "./pages/Contact"
 import Layout from './components/Layout'
 import { useEffect, useState } from 'react'
 import Loader from './components/Loader/Loader'
+import GalleryDetail from './components/GalleryDetail'
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
-    },1000)
+    },2000)
 
   },[])
 
@@ -33,6 +34,7 @@ function App() {
         { index: true, element: <Home /> },
         { path: '/about', element: <About /> },
         { path: '/services', element: <Services /> },
+        { path: '/services/product/:name', element: <GalleryDetail /> },
         { path: '/contact', element: <Contact /> },
       ],
     },
