@@ -7,41 +7,42 @@ import About from "./pages/About"
 import Services from "./pages/Services"
 import Contact from "./pages/Contact"
 import Layout from './components/Layout'
+import { useEffect, useState } from 'react'
+import Loader from './components/Loader/Loader'
 
 
 function App() {
 
+
+  const [loading, setLoading] = useState(false);
+
+   useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },1000)
+
+  },[])
+
+
   const router = createBrowserRouter([
-
     {
-      path:"/",
-      element : <Layout><Home /> </Layout>,
+      path: '/',
+      element: <Layout />, 
+      children: [
+        { index: true, element: <Home /> },
+        { path: '/about', element: <About /> },
+        { path: '/services', element: <Services /> },
+        { path: '/contact', element: <Contact /> },
+      ],
     },
-    {
-      path:"/about",
-      element : <Layout><About /></Layout>,
-    },
-    {
-      path:"/services",
-      element : <Layout><Services /></Layout>,
-    },
-    {
-      path:"/contact",
-      element : <Layout><Contact /></Layout>,
-    }
-
-
   ])
 
 
 
 
   return (
-    
-    <>
-    <RouterProvider router={router} />
-    </>
-
+      loading ?  <Loader /> : <RouterProvider router={router} />
   )
 }
 

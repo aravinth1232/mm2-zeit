@@ -47,7 +47,7 @@ const Navbar = () => {
 
   return (
     <>
-    <section className=' overscroll-none px-2 md:px-6 py-4  bg-sitegrey2 flex flex-row justify-between   '>
+    <section className='hidden overscroll-none px-2 md:px-6 py-4  bg-sitegrey2 flex flex-row justify-between   '>
 
     {
       topBars.map(({id,name,icon:Icon} )=>(
@@ -81,14 +81,16 @@ const Navbar = () => {
     <header className={` z-50 w-full   flex   px-6  items-center transition-all duration-150 ease-linear  
       ${scrolled ? "fixed top-0 py-6 lg:py-2 shadow-lg  justify-end bg-tertiary-50" : "sticky top-0 py-6 lg:py-4 justify-end bg-sitewhite " }
     `}>
-      <div className={`absolute transition-all duration-300 ease-linear 
+      <Link
+      to="/"
+      className={`absolute transition-all duration-300 ease-linear 
         ${scrolled  ? " -bottom-3 left-7    " : "bottom-1 lg:bottom-3 left-7 " }
         `}>
         <img
         className='w-14 h-14 mx-auto '
         loading='lazy'
         src={logo} alt="logo" />
-      </div>
+      </Link>
 
       <nav className='hidden   lg:flex self-end gap-6 px-4     '>
         {

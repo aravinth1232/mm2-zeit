@@ -34,12 +34,12 @@ const images = [
 
 const Home = () => {
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  //   window.onbeforeunload = () => {
-  //     window.scrollTo(0, 0);
-  //   };
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
 
 
   
@@ -123,22 +123,22 @@ const border = "rounded-[50px] "
 
 
       <Stats />
+      <div className='py-4'>
       <WhyUs />
+      </div>
+      
 
         <div className='py-4'>
             <Carousel />
               </div>
 
-    <div 
+    {/* <div 
     
     // className="container mx-auto"
     >
       <CascadeSlider  />
-    </div>
-    <div className='py-4'>
-    <Offer />
-
-    </div>
+    </div> */}
+    
 
        <Footer />
     

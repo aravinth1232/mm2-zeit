@@ -25,7 +25,7 @@ const Carousel = () => {
     <>
 
 
-    <div className="flex lg:hidden flex-col gap-6   py-4 lg:p-12 font-primary">
+    <div className="flex  flex-col gap-6 lg:gap-10   py-4 lg:p-12 font-primary">
 
       <h1 
        className="text-lg lg:text-2xl text-tertiary-900 px-4  font-bold "
@@ -60,13 +60,13 @@ const Carousel = () => {
       </div>
 
       {/* Carousel Image */}
-      <div className=" relative w-full lg:w-[800px] h-72 lg:h-96  mx-auto overflow-hidden ">
+      <div className=" relative w-full lg:w-[800px] h-auto lg:h-96  mx-auto overflow-hidden ">
         {images.map((image, index) => (
           <img
             key={image.id}
             src={image.src}
             alt={image.name}
-            className={`absolute inset-0 rounded-md w-full h-full object-cover  cursor-pointer transition-opacity duration-500 ${
+            className={`absolute inset-0 rounded-md w-full h-full object-cover lg:object-fit cursor-pointer transition-opacity duration-500 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
 

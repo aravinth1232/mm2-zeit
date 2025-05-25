@@ -118,8 +118,8 @@ const Offer = () => {
 
           <Icon
           strokeWidth={2}
-          className='w-7 h-7 z-30 absolute top-0 right-0 translate-x-1/4
-          -translate-y-1/2 text-tertiary-700' />
+          className='w-5 h-5 z-30 absolute top-0 right-0 translate-x-1
+          -translate-y-1 text-tertiary-700' />
 
             <div className=' flex flex-col items-start gap-3 '>
             {/* <Icon className='text-tertiary-900' /> */}
