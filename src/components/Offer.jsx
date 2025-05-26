@@ -4,18 +4,21 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { UndoDot } from 'lucide-react';
 import { Wrench,CircleGauge,Hammer, History, Brush,  Package } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const content = [
   {
     title: 'Custom Bike Builds',
+    path: 'custom-bike-builds',
     description:
       "Transform your vision into reality with our custom bike build services. Whether you're looking for a complete overhaul or a unique design to match your personality, our expert team will work with you to create a bike that stands out.",
     icon: Wrench,
   },
   {
     title: 'Performance Upgrades',
+    path: "performance-upgrades",
     description:
       'Take your bike to the next level with our performance upgrade services. From improved suspension to faster gearing, we ensure your bike delivers optimal performance on any terrain.',
       icon: CircleGauge,
@@ -54,6 +57,8 @@ const Offer = () => {
   const controls = useAnimation();
   const titleControls = useAnimation();
   const itemsControls = useAnimation();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (inView) {
@@ -100,7 +105,7 @@ const Offer = () => {
         What We Do ?
       </motion.h2>
       <div className=" grid grid-cols-2 md:grid-cols-3 gap-8  md:gap-8 relative z-10 one">
-        {content.map(({title,description,icon:Icon}, index) => (
+        {content.map(({title,path,description,icon:Icon}, index) => (
           <motion.div
             key={index}
             custom={index}
@@ -114,6 +119,10 @@ const Offer = () => {
                 transformStyle: 'preserve-3d', // Preserve child transformations
               }}
             className="bg-transparent backdrop-blur-2xl flex flex-col justify-start items-start gap-5 two shadow-xl rounded-lg px-4 py-6 cursor-pointer relative  "
+            onClick={()=>{
+              console.log("Ccc")
+              navigate(`/services/${path}`)
+            }}
           >
 
           <Icon

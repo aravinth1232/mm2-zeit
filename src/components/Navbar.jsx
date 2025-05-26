@@ -14,8 +14,13 @@ const Navbar = () => {
     {id:3,path : "/services", name:"Services",icon:Handshake},
     {id:4,path : "/contact", name:"Contact",icon: Contact},
   ]
-  const { pathname } = useLocation();
-  const currentPath = pathname;
+
+  // const { pathname } = useLocation();
+  // const currentPath = pathname;
+  
+  const location = useLocation()
+  const currentPath = "/" + location.pathname.split("/")[1];
+  
   
 
   const [open,setOpen] = useState(false);
@@ -47,7 +52,7 @@ const Navbar = () => {
 
   return (
     <>
-    <section className='hidden overscroll-none px-2 md:px-6 py-4  bg-sitegrey2 flex flex-row justify-between   '>
+    <section className='hidden overscroll-none px-2 md:px-6 py-4  bg-sitegrey2  flex-row justify-between   '>
 
     {
       topBars.map(({id,name,icon:Icon} )=>(

@@ -10,6 +10,7 @@ import Layout from './components/Layout'
 import { useEffect, useState } from 'react'
 import Loader from './components/Loader/Loader'
 import GalleryDetail from './components/GalleryDetail'
+import OfferDetail from './components/OfferDetail'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         { index: true, element: <Home /> },
         { path: '/about', element: <About /> },
         { path: '/services', element: <Services /> },
+        { path: '/services/:name', element: <OfferDetail /> },
         { path: '/services/product/:name', element: <GalleryDetail /> },
         { path: '/contact', element: <Contact /> },
       ],
