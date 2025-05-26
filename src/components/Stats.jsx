@@ -74,8 +74,8 @@ const Stats = () => {
 
         </div>
         <div className='flex flex-col gap-1 lg:gap-1  '>
-        <h1 className='text-xl lg:text-4xl font-semibold text-tertiary-900'> {`${value}${symbol}`}</h1>
-            {/* <h1 className='text-xl lg:text-4xl font-semibold text-tertiary-900'> {`${counts[index]}${symbol}`}</h1> */}
+        {/* <h1 className='text-xl lg:text-4xl font-semibold text-tertiary-900'> {`${value}${symbol}`}</h1> */}
+            <h1 className='text-xl lg:text-4xl font-semibold text-tertiary-900'> {`${counts[index]}${symbol}`}</h1>
             <p className='text-xs lg:text-lg font-medium text-tertiary-500'>{description}</p>
         </div>
 

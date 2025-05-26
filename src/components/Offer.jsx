@@ -89,7 +89,7 @@ const Offer = () => {
       }}
       initial={{ opacity: 0 }}
       animate={controls}
-      className=" relative flex flex-col lg:flex-row gap-10 lg:gap-0 lg:items-center justify-between font-primary   px-4 py-8  overflow-hidden "
+      className=" relative flex flex-col lg:flex-row gap-10 lg:gap-0 lg:items-center justify-between font-primary   px-4 py-8 lg:p-12 overflow-hidden "
     >
       {/* SVG Mask */}
       {/* <img

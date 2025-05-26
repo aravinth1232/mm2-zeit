@@ -93,13 +93,19 @@ const border = "rounded-[50px] "
         </p>
         <div className="flex justify-center lg:justify-start">
           <Link to="/services">
-            <motion.button 
+           <motion.button 
               aria-label="Modify your bike now"
-              // className='z-20 text-sm lg:text-lg font-bold bg-gradient2 px-4 py-2 text-tertiary-100 flex items-center gap-2 transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary'
-              className={`z-20 text-sm lg:text-lg font-bold font-primary bg-gradient2 px-4 py-2 ${border} text-tertiary-100 flex flex-row items-center gap-1 group transition-all duration-200  focus:outline-none focus:ring-2 focus:ring-primary`}
+              className={`z-20 flex  px-4 py-2  relative overflow-hidden group shadow-sm rounded-[50px]`}
               >
-              <span>Modify now</span>
-              <ChevronsRight className='transition-all duration-200' />
+              
+              <div className='px-2 py-1 flex hover:flex-row-reverse  items-center gap relative z-10 text-white'>
+              <h1 
+              className=' '
+              >Modify now</h1>
+               <ChevronsRight className='transition-all duration-200 ' />
+              </div>    
+
+              <span className=' w-full h-full block absolute inset-0 rounded-[50px] bg-gradient2 scale-90 group-hover:scale-125 transition-transform duration-700 ease-in-out ' ></span>
             </motion.button>
           </Link>
         </div>
@@ -128,10 +134,14 @@ const border = "rounded-[50px] "
       <WhyUs />
       </div>
       
+      <div className='py-4'>
+        <Offer />
+      </div>
 
-        <div className='py-4'>
+
+        {/* <div className='py-4'>
             <Carousel />
-              </div>
+              </div> */}
 
     {/* <div 
     
