@@ -11,6 +11,7 @@ import image9 from "../assets/9.png"
 import image10 from "../assets/10.png"
 import { ArrowUpRight, ChevronDown, ChevronUp, ExternalLink, MoveUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { changeToUrl } from "../constants/constants";
 
 const Gallery = () => {
   const images = [
@@ -44,8 +45,7 @@ const Gallery = () => {
       {images.map((image, index) => (
         <div
           onClick={()=> {
-            // navigate(`/services/product/${image.path}`)
-            navigate(`/services/product/white-scaven`)
+             navigate(`/services/product/${changeToUrl(image.name)}`)
             
           }}
           key={index}

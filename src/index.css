@@ -33,9 +33,16 @@ background: linear-gradient(90deg, rgba(220,220,220,1) 22%, rgb(161, 157, 157) 7
 }
 
 .bg-gradient2{
-    background: rgb(82,82,82);
 background: linear-gradient(90deg, rgba(82,82,82,1) 51%, rgb(131, 125, 125) 96%);
+transition: all 1s ease-in-out;
+
 }
+
+/* .bg-gradient2:hover{
+    background: rgb(82,82,82);
+    background: linear-gradient(90deg, rgba(82,82,82,1) 21%, rgb(131, 125, 125) 36%);
+} */
+
 
 
 /* Add this to your global styles */
@@ -50,12 +57,13 @@ background: linear-gradient(90deg, rgba(82,82,82,1) 51%, rgb(131, 125, 125) 96%)
   
 
 .form-bg{
-
     opacity: 70%;
-
-
 }
 
+.custom-skew {
+  /* transform: skew(-15deg); */
+  transform: skewY(15deg) rotate(35deg);
+}
 
 
 

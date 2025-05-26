@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { UndoDot } from 'lucide-react';
 import { Wrench,CircleGauge,Hammer, History, Brush,  Package } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import {changeToUrl} from "../constants/constants"
 
 
 
@@ -25,6 +26,7 @@ const content = [
   },
   {
     title: 'Restoration Services',
+    path: "restoration-services",
     description:
       "Breathe new life into your classic or vintage bike with our restoration services. Our team specializes in restoring bikes to their former glory, preserving both style and functionality.",
     icon: History,
@@ -120,8 +122,7 @@ const Offer = () => {
               }}
             className="bg-transparent backdrop-blur-2xl flex flex-col justify-start items-start gap-5 two shadow-xl rounded-lg px-4 py-6 cursor-pointer relative  "
             onClick={()=>{
-              console.log("Ccc")
-              navigate(`/services/${path}`)
+              navigate(`/services/${changeToUrl(title)}`)
             }}
           >
 
@@ -132,7 +133,7 @@ const Offer = () => {
 
             <div className=' flex flex-col items-start gap-3 '>
             {/* <Icon className='text-tertiary-900' /> */}
-            <h3 className="text-xs lg:text-lg font-semibold font-karla text-tertiary-700 ">{title}</h3>
+            <h3 className="text-xs lg:text-lg font-semibold font-primary text-tertiary-700 ">{title}</h3>
             </div>
             {/* <p className="text-xs lg:text-base font-inconsolata text-tertiary-300 ">{description}</p> */}
           </motion.div>

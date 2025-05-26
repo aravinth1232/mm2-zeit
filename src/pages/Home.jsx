@@ -96,7 +96,7 @@ const border = "rounded-[50px] "
             <motion.button 
               aria-label="Modify your bike now"
               // className='z-20 text-sm lg:text-lg font-bold bg-gradient2 px-4 py-2 text-tertiary-100 flex items-center gap-2 transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary'
-              className={`z-20 text-sm lg:text-lg font-bold font-primary bg-gradient2 px-4 py-2 ${border} text-tertiary-100 flex flex-row items-center gap-1 group transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary`}
+              className={`z-20 text-sm lg:text-lg font-bold font-primary bg-gradient2 px-4 py-2 ${border} text-tertiary-100 flex flex-row items-center gap-1 group transition-all duration-200  focus:outline-none focus:ring-2 focus:ring-primary`}
               >
               <span>Modify now</span>
               <ChevronsRight className='transition-all duration-200' />
