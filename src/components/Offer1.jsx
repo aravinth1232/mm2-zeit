@@ -64,7 +64,7 @@ const Offer1 = () => {
   return (
     <motion.div
       
-      className=" relative flex flex-col lg:flex-row    font-primary   px-4 py-8 lg:p-12 overflow-hidden "
+      className=" relative flex flex-col  lg:flex-row    font-primary gap-5 lg:gap-0  px-4 py-8 lg:p-12 overflow-hidden "
     >
       {/* SVG Mask */}
       {/* <img
@@ -73,7 +73,7 @@ const Offer1 = () => {
         className="absolute top left-2 lg:left-[80%] w-1/4 h-auto opacity-40 z-0"
         style={{ transform: 'translate(-10%, -10%)' }}
       /> */}
-      <div className=' w-1/4 px-4 py-6 flex flex-col  gap-8  '>
+      <div className=' lg:w-1/4 px-4 lg:py-6 flex flex-col  gap-8  '>
       <motion.h2
         
         className="text-xl lg:text-2xl text-tertiary-900  font-bold   relative z-10"
@@ -88,7 +88,8 @@ const Offer1 = () => {
         src={image1} alt="" /> */}
 
        </div>
-      <div className="w-3/4   grid grid-cols-2 md:grid-cols-2 gap-8  md:gap-8 relative z-10 one">
+       
+      <div className=" lg:w-3/4   grid grid-cols-1 md:grid-cols-2 gap-8  md:gap-8 relative z-10 one">
         {content.map(({title,path,description,icon:Icon}, index) => (
           <motion.div
             key={index}

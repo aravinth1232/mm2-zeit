@@ -6,7 +6,7 @@ const Hero = ({title,description}) => {
 
       {/* text */}
       <div className=' flex flex-col gap-4 justify-center items-center w-full '>
-        <h1 className='bg-transparent backdrop-blur-sm text-tertiary-800 text-3xl lg:text-3xl font-bold  leading-tight '>
+        <h1 className='bg-transparent text-center backdrop-blur-sm text-tertiary-800 text-3xl lg:text-3xl font-bold  leading-tight '>
          {/* Behind Every Solution, a Commitment to You. */}
          {title}
         </h1>

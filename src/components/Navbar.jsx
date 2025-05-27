@@ -57,7 +57,7 @@ const Navbar = () => {
      
      
     
-    <header className={`bg-sitewhite my-4 z-50 lg:w-1/2  shadow-lg py-6 lg:py-2   mx-auto flex justify-between  px-6  items-center transition-all duration-150 ease-linear  sticky top-4 border-2 
+    <header className={`bg-sitewhite my-4 z-50 lg:w-1/2  shadow-lg py-2 lg:py-2   mx-auto flex justify-between  px-6  items-center transition-all duration-150 ease-linear  sticky top-4 border-2 
     rounded-full   
     `}>
       <Link
