@@ -25,6 +25,7 @@ import ParallaxSection from '../components/ParallaxSection';
 import Carousel from '../components/Carousel';
 import CascadeSlider from '../components/CascadeSlider';
 import Offer from '../components/Offer';
+import Offer1 from '../components/Offer1';
 
 
 const images = [
@@ -35,12 +36,12 @@ const images = [
 
 const Home = () => {
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    window.onbeforeunload = () => {
-      window.scrollTo(0, 0);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   window.onbeforeunload = () => {
+  //     window.scrollTo(0, 0);
+  //   };
+  // }, []);
 
 
   
@@ -98,7 +99,7 @@ const border = "rounded-[50px] "
               className={`z-20 flex  px-4 py-2  relative overflow-hidden group shadow-sm rounded-[50px]`}
               >
               
-              <div className='px-2 py-1 flex hover:flex-row-reverse  items-center gap relative z-10 text-white'>
+              <div className='px-2 py-1 flex   items-center gap relative z-10 text-white'>
               <h1 
               className=' '
               >Modify now</h1>
@@ -135,7 +136,7 @@ const border = "rounded-[50px] "
       </div>
       
       <div className='py-4'>
-        <Offer />
+        <Offer1 />
       </div>
 
 
