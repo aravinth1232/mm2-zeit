@@ -18,7 +18,7 @@ const Contact = () => {
 
   return (
     <>
-    <main className='max-w-screen-2xl mx-auto bg-tertiary-100'>
+    <main className='max-w-screen-2xl mx-auto bg-siteewhite'>
     
     <div className=''>
     <Location />

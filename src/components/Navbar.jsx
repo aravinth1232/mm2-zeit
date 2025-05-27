@@ -51,48 +51,21 @@ const Navbar = () => {
   const border = "rounded-[50px]"
 
   return (
-    <>
-    <section className='hidden overscroll-none px-2 md:px-6 py-4  bg-sitegrey2  flex-row justify-between   '>
-
-    {
-      topBars.map(({id,name,icon:Icon} )=>(
-
-        <div
-        key= {id}
-        className=' flex flex-row gap-1 md:gap-2  items-center justify-center font-primary text-tertiary-800'>
-        <Icon 
-        size={20}
-        // className='w-4 h-4  text-tertiary-800 '  
-        />
-        <h1 className={`
-        text-xs md:text-sm  font-medium
-        
-
-        `}
-         >{name}</h1>
-       </div>
-
-      ))
-    }
-
-   
-     
-
-
-    </section>
+    
+    
      
      
     
-    <header className={` z-50 w-full   flex   px-6  items-center transition-all duration-150 ease-linear  
-      ${scrolled ? "fixed top-0 py-6 lg:py-2 shadow-lg  justify-end bg-tertiary-50" : "sticky top-0 py-6 lg:py-4 justify-end bg-sitewhite " }
+    <header className={`bg-sitewhite my-4 z-50 lg:w-1/2  shadow-lg py-6 lg:py-2   mx-auto flex justify-between  px-6  items-center transition-all duration-150 ease-linear  sticky top-4 border-2 
+    rounded-lg   
     `}>
       <Link
       to="/"
-      className={`absolute transition-all duration-300 ease-linear 
-        ${scrolled  ? " -bottom-3 left-7    " : "bottom-1 lg:bottom-3 left-7 " }
+      className={` transition-all duration-300 ease-linear 
+        ${scrolled  ? "    " : " " }
         `}>
         <img
-        className='w-14 h-14 mx-auto '
+        className='w-10 h-10 mx-auto '
         loading='lazy'
         src={logo} alt="logo" />
       </Link>
@@ -134,8 +107,8 @@ const Navbar = () => {
         <motion.button 
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className={` text-sm lg:text-lg font-bold font-primary bg-gradient2 px-4 py-2 ${border} text-tertiary-100  `}>
-          Customize Bike
+        className={` text-sm lg:text-base font-bold font-primary bg-gradient2 px-4 py-2 ${border} text-tertiary-100  `}>
+          Contact
         </motion.button>
         </Link> */}
         
@@ -220,7 +193,6 @@ const Navbar = () => {
 
     </header>
    
-    </>
 
   )
 }

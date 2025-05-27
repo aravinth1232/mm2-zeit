@@ -77,12 +77,11 @@ const Home = () => {
 const border = "rounded-[50px] "
 
   return (
-     <main 
-     ref={container}
-     
-     className='max-w-screen-2xl mx-auto overscroll-none bg-sitewhite h-svh lg:h-screen  font-primary   '>
+     <main      
+     className='max-w-screen-2xl mx-auto bg-sitewhite   font-primary'>
 
       {/* home page */}
+      
       <div className='px-4 py-8 flex flex-col lg:flex-row w-full gap-5 h-auto  items-center'>
       {/* Text Section */}
       <div className='z-40 flex flex-col gap-4 text-center lg:text-left w-full lg:w-1/2'>
@@ -113,8 +112,8 @@ const border = "rounded-[50px] "
       </div>
       
       {/* Image Section */}
-      <div className='z-20 w-full lg:w-1/2 flex justify-center lg:justify-end'>
-        <div className='relative w-full max-w-screen-md lg:max-w-screen-2xl h-auto overflow-hidden'>
+      <div className=' w-full lg:w-1/2 flex justify-center lg:justify-end'>
+        <div className='relative w-full max-w-screen-md lg:max-w-screen-2xl h-auto '>
           <motion.img 
             className='w-full h-auto object-cover transition-opacity duration-300 ease-linear'
             loading='lazy'
@@ -123,7 +122,7 @@ const border = "rounded-[50px] "
           />
         </div>
       </div>
-    </div>
+      </div>
 
     
            
@@ -134,6 +133,8 @@ const border = "rounded-[50px] "
       <div className='py-4'>
       <WhyUs />
       </div>
+
+      
       
       <div className='py-4'>
         <Offer1 />
@@ -151,6 +152,9 @@ const border = "rounded-[50px] "
       <CascadeSlider  />
     </div> */}
     
+      
+     
+
 
        <Footer />
     

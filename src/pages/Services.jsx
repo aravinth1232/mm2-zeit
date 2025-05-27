@@ -17,7 +17,7 @@ const Services = () => {
 
   return (
 
-    <main className='bg-tertiary-100 relative max-w-screen-2xl mx-auto'>
+    <main className='bg-sitewhite relative max-w-screen-2xl mx-auto'>
     
     {/* <div className='py-4'>
     <Offer />
