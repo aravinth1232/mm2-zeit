@@ -111,11 +111,11 @@ const Offer1 = () => {
             </div>
             <p className="text-sm lg:text-base  text-tertiary-600  ">{description}</p>
             <Link
-            className=' rounded-full px-4 py-1 border-2 shadow  text-siteblack hover:shadow-lg transition-all duration-300 '
+            className=' rounded-full px-4 py-1 border-2 shadow text-sm text-siteblack hover:shadow-md transition-all duration-300 '
             onClick={()=>{
               navigate(`/services/${changeToUrl(title)}`)
             }}
-            >More Details</Link>
+            >Explore More</Link>
           </motion.div>
         ))}
       </div>

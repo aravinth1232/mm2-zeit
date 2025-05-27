@@ -109,7 +109,7 @@ const Navbar = () => {
         <motion.button 
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => setIsModalOpen(!isModalOpen)}
         className={` text-sm  font-medium font-primary bg-gradient2 px-4 py-2 rounded-[999px] text-tertiary-100  `}>
           Get in Touch
         </motion.button>
@@ -157,14 +157,14 @@ const Navbar = () => {
               <motion.button 
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => setIsModalOpen(!isModalOpen)}
         className={`mt-4 text-sm  font-medium font-primary bg-gradient2 px-4 py-2 rounded-[999px] text-tertiary-100  `}>
           Submit
         </motion.button>
 
             <button
            
-                  onClick={() => setIsModalOpen(false)}
+                  onClick={() => setIsModalOpen(!isModalOpen)}
                   className="absolute -top-7 left-1/2 transform -translate-x-1/2  bg-tertiary-800 rounded-full text-tertiary-100 px-2 py-2 hover:text-tertiary-300 duration-300 transition-all hover:scale-110"
                 >
                   <X />

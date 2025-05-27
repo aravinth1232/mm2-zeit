@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = ({title,description}) => {
   return (
-    <div className=' px-4 pt-10 pb-4 flex flex-col  w-full gap-8 h-auto  items-center' >
+    <div className=' px-4 pt-10 pb-4 flex flex-col font-primary w-full gap-8 h-auto  items-center' >
 
       {/* text */}
       <div className=' flex flex-col gap-4 justify-center items-center w-full '>
