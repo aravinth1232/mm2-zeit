@@ -96,10 +96,6 @@ const Offer1 = () => {
             whileHover={
                 {scale : 1.1}
             }
-              style={{
-                perspective: 1000, // Add perspective for 3D effect
-                transformStyle: 'preserve-3d', // Preserve child transformations
-              }}
             className="bg-transparent backdrop-blur-2xl flex flex-col justify-start items-start gap-5 two shadow-sm px-4 py-6 cursor-pointer relative  "
             
           >
@@ -114,7 +110,7 @@ const Offer1 = () => {
             </div>
             <p className="text-sm lg:text-base  text-tertiary-600  ">{description}</p>
             <Link
-            className=' rounded-full px-4 py-1 border-2 shadow  text-siteblack'
+            className=' rounded-full px-4 py-1 border-2 shadow  text-siteblack hover:shadow-lg transition-all duration-300 '
             onClick={()=>{
               navigate(`/services/${changeToUrl(title)}`)
             }}

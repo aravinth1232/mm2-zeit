@@ -156,7 +156,7 @@ const border = "rounded-[50px] "
      
 
 
-       <Footer />
+       {/* <Footer /> */}
     
 
 

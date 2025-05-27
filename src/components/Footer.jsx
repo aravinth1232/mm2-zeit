@@ -21,8 +21,8 @@ const Footer = () => {
     {id:4,path : "#", name:"Contact",icon: FaLinkedinIn},
   ]
 
-    const { pathname } = useLocation();
-    const currentPath = pathname;
+   const location = useLocation()
+  const currentPath = "/" + location.pathname.split("/")[1];
 
   return (
     <footer className=" bg-tertiary-900 font-primary

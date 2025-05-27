@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Gallery from '../components/Gallery'
 import Offer from '../components/Offer'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const Services = () => {
 
@@ -19,10 +20,10 @@ const Services = () => {
 
     <main className='bg-sitewhite relative max-w-screen-2xl mx-auto'>
     
-    {/* <div className='py-4'>
-    <Offer />
-
-    </div> */}
+    <Hero 
+    title="Shaping Experiences Through Every Service We Offer."
+    description="At Motomod, we specialize in transforming ordinary bikes into extraordinary machines. From custom builds and performance upgrades to paint jobs and restorations, our services are designed to bring your dream ride to life — one detail at a time."
+    />
     
   
     <div className='py-4'>
@@ -32,8 +33,8 @@ const Services = () => {
    
 
         
-       <Footer />
-    
+       {/* <Footer />
+     */}
    
     </main>
   )

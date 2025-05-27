@@ -36,6 +36,7 @@ const Layout = () => {
     <div className=''>
     <Navbar />
     <main><Outlet /></main>
+    <Footer />
      </div>
     </>
      
