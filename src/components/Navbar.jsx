@@ -5,6 +5,7 @@ import { Home,Handshake,LifeBuoy, Contact,CircleChevronRight,RefreshCcwDot, Disc
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
+import MenuButton from './MenuButton';
 
 const Navbar = () => {
 
@@ -23,8 +24,8 @@ const Navbar = () => {
   
   
 
-  const [open,setOpen] = useState(false);
-  const [openNew,setOpenNew] = useState(false);
+  // const [open,setOpen] = useState(false);
+  // const [openNew,setOpenNew] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -121,7 +122,7 @@ const Navbar = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsModalOpen(!isModalOpen)}
-        className={`lg:hidden text-sm  font-medium font-primary bg-gradient2 mt-4 px-4 py-2 rounded-[999px]   text-tertiary-100  `}>
+        className={`lg:hidden text-sm  font-medium font-primary bg-gradient2 mt-4 px-4 py-2 rounded-xl   text-tertiary-100  `}>
           Get in Touch
         </motion.button>
         
@@ -133,7 +134,7 @@ const Navbar = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsModalOpen(!isModalOpen)}
-        className={`hidden lg:block text-sm  font-medium font-primary bg-gradient2  px-4 py-2 rounded-[999px]   text-tertiary-100  `}>
+        className={`hidden lg:block text-sm  font-medium font-primary bg-gradient2  px-4 py-2 rounded-xl   text-tertiary-100  `}>
           Get in Touch
         </motion.button>
 
@@ -202,10 +203,10 @@ const Navbar = () => {
         </div>
         <div class="flex  lg:hidden ">
           
-
-             <Menu
-             onClick={toggleMenu}
-             />
+          <MenuButton 
+          isOpen={isOpen}
+          onClick={toggleMenu}
+          />
             
         </div>
 
