@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import logo from "../assets/logo2.png";
-import { Home,Handshake,LifeBuoy, Contact,CircleChevronRight,RefreshCcwDot, Disc, Ellipsis, EllipsisVertical, EllipsisVerticalIcon, CircleEllipsis, RedoDot, MapPinCheck, Dot,X } from 'lucide-react';
+import { Home,Handshake,LifeBuoy, Contact,CircleChevronRight,RefreshCcwDot, Disc, Ellipsis, EllipsisVertical, EllipsisVerticalIcon, CircleEllipsis, RedoDot, MapPinCheck, Dot,X, Menu } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
@@ -24,6 +24,7 @@ const Navbar = () => {
   
 
   const [open,setOpen] = useState(false);
+  const [openNew,setOpenNew] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -50,17 +51,22 @@ const Navbar = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(prev => !prev);
+  };
+
 
   return (
     
     
      
-     
-    
-    <header className={`bg-sitewhite my-4 z-50 lg:w-1/2  shadow-lg py-2 lg:py-2   mx-auto flex justify-between  px-6  items-center transition-all duration-150 ease-linear  sticky top-4 border-2 
-    rounded-full   
-    `}>
-      <Link
+     <header
+
+     className='sticky top-4 mx-4 my-4 px-4 py-1  lg:w-1/2 lg:mx-auto z-50 bg-sitewhite flex items-center justify-between h-[60px] lg:h-auto shadow-lg rounded-xl border-2 '
+     >
+        <Link
       to="/"
       className={` transition-all duration-300 ease-linear 
         ${scrolled  ? "    " : " " }
@@ -70,27 +76,35 @@ const Navbar = () => {
         loading='lazy'
         src={logo} alt="logo" />
       </Link>
-      
-      
-      <div className="hidden   lg:flex items-center justify-center  gap-3"  >
-      <nav className=' flex self-end gap-6 px-4     '>
-        {
+        
+        <div className='flex items-center gap-5'>
+        <nav 
+        className={`z-50 absolute  top-[60px] right-0  lg:py-0 px-4 w-full lg:w-auto bg-sitewhite lg:static flex flex-col  lg:flex-row lg:items-center lg:max-h-full gap-4 lg:gap-7  overflow-hidden transition-all duration-300  ease-in-out    lg:shadow-none 
+
+          ${isOpen ? "max-h-96 shadow-lg border-2 py-5 rounded-lg"  :  "max-h-0"}
+  `}
+
+        >
+            
+             {
           links.map(({id,name,path,icon:Icon})=>(
             
             <Link
-            
-            className={`w-full flex flex-row-reverse px-4 py-3 justify-center items-center  gap  rounded-full font-medium group hover:scale-[1.2] transition-all duration-200 
+            onClick={()=>setIsOpen(false)}
+            className={`w-full  flex flex-row-reverse py-1 lg:py-3 justify-end lg:justify-center items-center    rounded-full font-medium group lg:hover:scale-[1.2] transition-all duration-200 
               ${path===currentPath ? " font-semibold text-tertiary-300 "  : "hover:text-tertiary-200 text-tertiary-100  "}
               `}
             key={id}
-            to={path} >
+            to={path} 
+            
+            >
               {/* <Icon className={`w-6 h-6 `} /> */}
               <h1 className={`relative text-tertiary-900  font-primary transition-all duration-200 
               
                 ${path ===currentPath  ? "font-semibold text-tertiary-900 text-base" : "text-sm hover:text-tertiary-500 text-tertiary-100  "}` }>{name}
                 
                 <span
-                className='absolute  top-1 left-1/2 -translate-x-1/2 translate-y-1/2  '
+                className='hidden lg:block absolute  top-1 left-1/2 -translate-x-1/2 translate-y-1/2  '
                 >{path === currentPath && <Dot className={`  w-6 h-6 
 
                       ${scrolled ? "text-tertiary-900" : " text-tertiary-700" } `} />   }  </span>
@@ -103,18 +117,26 @@ const Navbar = () => {
           ))
         }
 
-      </nav>
-        
-        <div className="relative z-50">
         <motion.button 
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsModalOpen(!isModalOpen)}
-        className={` text-sm  font-medium font-primary bg-gradient2 px-4 py-2 rounded-[999px] text-tertiary-100  `}>
+        className={`lg:hidden text-sm  font-medium font-primary bg-gradient2 mt-4 px-4 py-2 rounded-[999px]   text-tertiary-100  `}>
+          Get in Touch
+        </motion.button>
+        
+       
+        
+        
+        </nav>
+        <motion.button 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => setIsModalOpen(!isModalOpen)}
+        className={`hidden lg:block text-sm  font-medium font-primary bg-gradient2  px-4 py-2 rounded-[999px]   text-tertiary-100  `}>
           Get in Touch
         </motion.button>
 
-        {/* modal start */}
          <AnimatePresence>
         {isModalOpen && (
           <motion.div
@@ -178,88 +200,21 @@ const Navbar = () => {
       </AnimatePresence>
 
         </div>
+        <div class="flex  lg:hidden ">
+          
 
+             <Menu
+             onClick={toggleMenu}
+             />
+            
         </div>
-        
-        <button
-  onClick={() => {
-    setOpen(!open);
-  }}
-  disabled= {open}
-  className={`flex flex-col items-start gap-[6px] cursor-pointer group  lg:hidden
-    ${open ? " opacity-0 " : "opacity-100 "}`
 
-  }
->
-  
-
-  <span
-    className={`block h-[2px] bg-black transition-all duration-300 ${
-      open ? "w-5" : "w-2"
-    } lg:group-hover:w-5`}
-  ></span>
-  <span
-    className={`block h-[2px] bg-black transition-all duration-300 ${
-      open ? "w-8" : "w-4"
-    } lg:group-hover:w-8`}
-  ></span>
-  <span
-    className={`block h-[2px] bg-black transition-all duration-300 ${
-      open ? "w-5" : "w-6"
-    } lg:group-hover:w-5`}
-  ></span>
-</button>
-
-        
-
-
-<aside
-  className={`fixed top-0 inset-0 left-0 w-3/4 h-screen bg-primary flex flex-col   transition-all duration-300 ease-in-out transform rounded-md ${
-    open ? "opacity-100 visible translate-x-0" : "opacity-0 invisible -translate-x-full"
-  }`}
->
-  {/* Navigation Links */}
-  <nav className="relative flex flex-col gap-4 w-full px-4 py-4 lg:hidden translate-y-20">
-    {links.map(({ id, name, path, icon: Icon }) => (
-      <Link
-      onClick={() => {
-        setOpen(!open);
-      }}
-        key={id}
-        to={path}
-        className={`w-full flex items-center justify-between px-4 py-3 gap-2 rounded font-medium group active:scale-95 transition-all duration-200  ${
-          path === currentPath
-            ? "font-semibold text-tertiary-200 "
-            : "hover:text-tertiary-200 text-tertiary-300 "
-        }`}
-      >
        
-        {/* {path === currentPath && <Icon className="w-6 h-6" />} */}
-   
-        <h1 className="text-base font-primary">{name}</h1>
-        {path === currentPath &&  <Dot className="w-10 h-10"  /> }  
-      </Link>
-    ))}
-  </nav>  
-
-    
-    
-
-  {/* Close Button */}
-  <motion.button
-   whileTap={{ scale: 0.95 }}
-    onClick={() => setOpen(!open)}
-    className="absolute top-5 right-6 cursor-pointer group"
-  >
-    <div className="relative w-5 h-5">
-      <span className="block absolute w-5 h-[3px] bg-white rotate-45 top-1/2 left-0 transform -translate-y-1/2"></span>
-      <span className="block absolute w-5 h-[3px] bg-white -rotate-45 top-1/2 left-0 transform -translate-y-1/2"></span>
-    </div>
-  </motion.button>
-</aside>
-
-
+          
+       
     </header>
+    
+   
    
 
   )
@@ -276,3 +231,55 @@ export default Navbar
                 >
                   <X />
                 </button> */}
+
+
+
+
+
+
+
+
+//                 <aside
+//   className={`fixed top-0 inset-0 left-0 w-3/4 h-screen bg-primary flex flex-col   transition-all duration-300 ease-in-out transform rounded-md ${
+//     open ? "opacity-100 visible translate-x-0" : "opacity-0 invisible -translate-x-full"
+//   }`}
+// >
+//   {/* Navigation Links */}
+//   <nav className="relative flex flex-col gap-4 w-full px-4 py-4 lg:hidden translate-y-20">
+//     {links.map(({ id, name, path, icon: Icon }) => (
+//       <Link
+//       onClick={() => {
+//         setOpen(!open);
+//       }}
+//         key={id}
+//         to={path}
+//         className={`w-full flex items-center justify-between px-4 py-3 gap-2 rounded font-medium group active:scale-95 transition-all duration-200  ${
+//           path === currentPath
+//             ? "font-semibold text-tertiary-200 "
+//             : "hover:text-tertiary-200 text-tertiary-300 "
+//         }`}
+//       >
+       
+//         {/* {path === currentPath && <Icon className="w-6 h-6" />} */}
+   
+//         <h1 className="text-base font-primary">{name}</h1>
+//         {path === currentPath &&  <Dot className="w-10 h-10"  /> }  
+//       </Link>
+//     ))}
+//   </nav>  
+
+    
+    
+
+//   {/* Close Button */}
+//   <motion.button
+//    whileTap={{ scale: 0.95 }}
+//     onClick={() => setOpen(!open)}
+//     className="absolute top-5 right-6 cursor-pointer group"
+//   >
+//     <div className="relative w-5 h-5">
+//       <span className="block absolute w-5 h-[3px] bg-white rotate-45 top-1/2 left-0 transform -translate-y-1/2"></span>
+//       <span className="block absolute w-5 h-[3px] bg-white -rotate-45 top-1/2 left-0 transform -translate-y-1/2"></span>
+//     </div>
+//   </motion.button>
+// </aside>
