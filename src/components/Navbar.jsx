@@ -22,10 +22,6 @@ const Navbar = () => {
   const location = useLocation()
   const currentPath = "/" + location.pathname.split("/")[1];
   
-  
-
-  // const [open,setOpen] = useState(false);
-  // const [openNew,setOpenNew] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,13 +39,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const topBars = [
-    // {id:1, name:"Redesign. Rebuild. Ride.",icon : RedoDot},
-    {id:1, name:"Revamp Your Wheels",icon : RedoDot},
-    {id:2, name:"Thoothukdi,TN",icon : MapPinCheck},
-  ]
-
-
+ 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);

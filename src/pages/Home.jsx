@@ -36,12 +36,12 @@ const images = [
 
 const Home = () => {
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    window.onbeforeunload = () => {
-      window.scrollTo(0, 0);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   window.onbeforeunload = () => {
+  //     window.scrollTo(0, 0);
+  //   };
+  // }, []);
 
 
   
@@ -85,27 +85,66 @@ const border = "rounded-[50px] "
       <div className='px-4 py-8 flex flex-col lg:flex-row w-full gap-5 h-auto  items-center'>
       {/* Text Section */}
       <div className='z-40 flex flex-col gap-4 text-center lg:text-left w-full lg:w-1/2'>
-        <h1 className='bg-transparent backdrop-blur-sm text-tertiary-800 text-3xl lg:text-5xl font-bold uppercase leading-tight'>
+        <motion.h1 layout className='bg-transparent backdrop-blur-sm text-tertiary-800 text-3xl lg:text-5xl font-bold uppercase leading-tight'>
           Customization of Bikes as You Like
-        </h1>
+        </motion.h1>
         <p className='bg-transparent backdrop-blur-sm text-tertiary-400 text-sm lg:text-base font-bold leading-relaxed'>
           Bring your bike to life with our expert touch. From design tweaks to full transformations, we make every ride an experience to remember!
         </p>
         <div className="flex justify-center lg:justify-start">
           <Link to="/services">
            <motion.button 
+              whileTap={{scale:0.8}}
               aria-label="Modify your bike now"
-              className={`z-20 flex  px-4 py-2  relative overflow-hidden group shadow-sm rounded-[50px]`}
+              className={`z-20  flex  px-4 py-2 bg-gradient2 relative overflow-hidden group shadow-sm rounded-[50px]`}
               >
               
-              <div className='px-2 py-1 flex   items-center gap relative z-10 text-white'>
+              <div className='px-2 py-1 flex justify-center  items-center gap-2 z-10 text-white'>
               <h1 
-              className=' '
+              className='text-sitewhite  '
               >Modify now</h1>
-               <ChevronsRight className='transition-all duration-200 ' />
+              
+              <motion.div
+              className="relative overflow-hidden flex   "
+              >
+              <motion.span 
+             
+              className='  absolute   '
+              style={{
+                y: "0%",
+                x: "-100%"
+                
+              }}  
+              transition={{ type: "spring", stiffness: 300 }}
+             initial={{x:0}}
+             animate ={{x:0}}
+
+              >
+                <ChevronsRight className='transition-all  group-hover:translate-x-full duration-300  ' />
+              </motion.span>
+               <motion.span 
+             
+              className='   '
+              style={{
+                y: "0%",
+                x: "0%",
+                
+                
+              }}  
+             initial={{x:0}}
+             animate ={{x:"-100%"}}
+             transition={{ type: "spring", stiffness: 300 }}
+
+              >
+                <ChevronsRight className='transition-all  group-hover:translate-x-full duration-500  ' />
+              </motion.span>
+
+             
+              </motion.div>
+               
               </div>    
 
-              <span className=' w-full h-full block absolute inset-0 rounded-[50px] bg-gradient2 scale-90 group-hover:scale-125 transition-transform duration-700 ease-in-out ' ></span>
+              
             </motion.button>
           </Link>
         </div>
@@ -193,3 +232,19 @@ export default Home
 // />
 
 // </div>
+
+
+// <motion.button 
+//               aria-label="Modify your bike now"
+//               className={`z-20 flex  px-4 py-2  relative overflow-hidden group shadow-sm rounded-[50px]`}
+//               >
+              
+//               <div className='px-2 py-1 flex   items-center gap relative z-10 text-white'>
+//               <h1 
+//               className=' '
+//               >Modify now</h1>
+//                <ChevronsRight className='transition-all duration-200 ' />
+//               </div>    
+
+//               <span className=' w-full h-full block absolute inset-0 rounded-[50px] bg-gradient2 scale-90 group-hover:scale-125 transition-transform duration-700 ease-in-out ' ></span>
+//             </motion.button>
