@@ -67,7 +67,7 @@ const MenuButton = ({
 
         <motion.span
           variants={VARIANTS.top}
-          className="absolute h-[2px]  bg-siteblack rounded-lg"
+          className="absolute h-[2px]  bg-siteblack "
           style={{ y: "-50%", 
             left: "50%", 
             x: "-50%", 

@@ -32,8 +32,8 @@ export default {
       },
 
       fontFamily:{
-        // primary : ['Inter','sans-serif'],
-        primary : ['Merriweather','serif']
+        primary : ['Inter','sans-serif'],
+        // primary : ['Open Sans','sans-serif']
       },
 
     },

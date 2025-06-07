@@ -36,12 +36,12 @@ const images = [
 
 const Home = () => {
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  //   window.onbeforeunload = () => {
-  //     window.scrollTo(0, 0);
-  //   };
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
 
 
   
