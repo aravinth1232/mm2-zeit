@@ -55,7 +55,7 @@ const Navbar = () => {
      
      <header
 
-     className='sticky top-4 mx-4 my-4 px-4 py-1  lg:w-1/2 lg:mx-auto z-50 bg-sitewhite flex items-center justify-between h-[60px] lg:h-auto shadow-lg rounded-xl border-2 '
+     className='sticky top-4 mx-4 my-4 px-4 py-1  lg:w-1/2 lg:mx-auto z-50 bg-sitewhite flex items-center justify-between h-[60px] lg:h-auto  rounded-xl  border'
      >
         <Link
       to="/"
