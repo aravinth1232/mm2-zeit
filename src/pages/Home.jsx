@@ -26,6 +26,7 @@ import Carousel from '../components/Carousel';
 import CascadeSlider from '../components/CascadeSlider';
 import Offer from '../components/Offer';
 import Offer1 from '../components/Offer1';
+import Reviews from '../components/Reviews';
 
 
 const images = [
@@ -190,6 +191,11 @@ const border = "rounded-[50px] "
     >
       <CascadeSlider  />
     </div> */}
+
+
+    <div className='pb-4'>
+      <Reviews />
+    </div>
     
       
      
