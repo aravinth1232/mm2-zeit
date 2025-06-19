@@ -5,6 +5,9 @@ import img1 from "../assets/reviews/review1.webp"
 
 const Reviews = () => {
 
+    
+    
+
 
     const reviews = [
     {
@@ -25,6 +28,7 @@ const Reviews = () => {
     image : img1,
     place : "Coimbatore"      
     },
+   
     ]
 
     const stars =[
@@ -47,15 +51,17 @@ const Reviews = () => {
         }
     ]
 
+    
+    const [current, setCurrent] = useState(0);
+    const total = reviews.length  ;
+
     const prev =()=>{
-        console.log("0")
+        setCurrent((current -1 ) % total);
     }
     const next =()=>{
-        setSlide(!slide)
+        setCurrent((current +1  ) % total);
     }
 
-
-    const [slide, setSlide] = useState(false);
 
   return (
     <div className='relative flex flex-col   font-primary gap-5  px-4 py-8 lg:px-12 lg:py-4 overflow-hidden  '>
@@ -90,13 +96,19 @@ const Reviews = () => {
     
     {/* body */}    
 
-    <div className={`grid grid-cols-3  gap-3 w-full font-primary transition-transform duration-500 overflow-hidden 
-        `} >
+    <div className="relative w-full max-w-3xl  mx-auto overflow-hidden rounded-2xl shadow-lg ">
+    
+    <div
+    className={`flex  transition-transform duration-500 ease-in-out
+        `} 
+    style={{ transform: `translateX(-${current * 100}%)` }}    
+        >
         {
         reviews.map((review,index)=>(
             <div
             key={index}
-            className=' py-4 px-4 flex flex-col gap-9 justify-between border-2 rounded-lg '
+            className='w-full flex-shrink-0 py-4 px-4 flex flex-col gap-9 justify-between  rounded-lg '
+            
             >
                 <div className='flex flex-col gap-5'>
 
@@ -140,7 +152,8 @@ const Reviews = () => {
 
         }
     </div>
-
+    
+    </div>
 
 
     </div>
