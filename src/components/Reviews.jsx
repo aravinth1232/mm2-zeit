@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Star, StarHalf } from 'lucide-react';
 import img1 from "../assets/reviews/review1.webp"
+import img2 from "../assets/reviews/review2.webp"
+import img3 from "../assets/reviews/review3.webp"
 
 const Reviews = () => {
 
@@ -19,16 +21,35 @@ const Reviews = () => {
     {
     title : "Arun Prakash",
     decsription : "I've tried a few services before, but this one stands out. Excellent craftsmanship and great communication throughout the process.",
-    image : img1,
+    image : img2,
     place : "Bangalore"      
     },
     {
     title : "Sneha M",
     decsription : "Professional, friendly, and truly passionate about their work. From the first consultation to the final delivery, the experience was smooth and stress-free.",
-    image : img1,
+    image : img3,
     place : "Coimbatore"      
     },
-   
+    {
+    title : "Divya S",
+    decsription : "From start to finish, the team maintained excellent communication. The end result was exactly what I envisioned. Couldn't be happier with the service.",
+    image : img1,
+    place : " Hyderabad"      
+    },
+    {
+    title : "Rohan K",
+    decsription : "Super impressed with the attention to detail and timely delivery. It's rare to find such dedication and craftsmanship these days.",
+    image : img2,
+    place : "Madurai"      
+    },
+    {
+    title : "Meera N",
+    decsription : "They turned my ideas into reality with complete precision. The process was smooth, professional, and the outcome was beyond expectations.",
+    image : img3,
+    place : "Trichy"      
+    },
+
+
     ]
 
     const stars =[
@@ -51,12 +72,17 @@ const Reviews = () => {
         }
     ]
 
+    const groupSlides = (arr, groupSize) =>
+  Array.from({ length: Math.ceil(arr.length / groupSize) }, (_, i) =>
+    arr.slice(i * groupSize, i * groupSize + groupSize)
+  );
     
+    const grouped = groupSlides(reviews, 3);
     const [current, setCurrent] = useState(0);
-    const total = reviews.length  ;
+    const total = grouped.length  ;
 
     const prev =()=>{
-        setCurrent((current -1 ) % total);
+        setCurrent((current -1 +total ) % total);
     }
     const next =()=>{
         setCurrent((current +1  ) % total);
@@ -64,7 +90,7 @@ const Reviews = () => {
 
 
   return (
-    <div className='relative flex flex-col   font-primary gap-5  px-4 py-8 lg:px-12 lg:py-4 overflow-hidden  '>
+    <div className='relative flex flex-col   font-primary gap-8  px-4 py-8 lg:px-12 lg:py-4 overflow-hidden  '>
       {/* header */}
       <div className=' w-full  px-4 lg:py-6  flex flex-row justify-between items-center    gap-8  '>
       
@@ -96,7 +122,7 @@ const Reviews = () => {
     
     {/* body */}    
 
-    <div className="relative w-full max-w-3xl  mx-auto overflow-hidden rounded-2xl shadow-lg ">
+    <div className="relative w-full   mx-auto overflow-hidden ">
     
     <div
     className={`flex  transition-transform duration-500 ease-in-out
@@ -104,13 +130,19 @@ const Reviews = () => {
     style={{ transform: `translateX(-${current * 100}%)` }}    
         >
         {
-        reviews.map((review,index)=>(
+        grouped.map((pair,index)=>(
             <div
             key={index}
-            className='w-full flex-shrink-0 py-4 px-4 flex flex-col gap-9 justify-between  rounded-lg '
-            
+            className='w-full flex-shrink-0 flex flex-col lg:flex-row gap-4 '
             >
-                <div className='flex flex-col gap-5'>
+                {
+                pair.map((review,index)=>(
+                    
+                    <div
+                    key={index}
+                    className='py-4 px-4 flex flex-col   gap-9 justify-between border  rounded-lg'>
+                    
+                     <div className='flex flex-col gap-5 '>
 
                     <div className='self-end flex flex-row'>
                     {
@@ -144,6 +176,13 @@ const Reviews = () => {
                     </div>
 
                 </div>
+                    </div>
+
+
+                ))
+
+                }
+               
 
             </div>
 
