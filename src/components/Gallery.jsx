@@ -61,13 +61,16 @@ const Gallery = () => {
             className="w-full  h-full object-cover opacity-90 group-hover:opacity-80  group-hover:scale-105 transition-all duration-[500ms]"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-tertiary-900 rounded-md bg-opacity-30 flex py-3 items-start justify-between px-4 translate-y-full
-          group-hover:translate-y-3/4
-          transition-all duration-[500ms]">
+          <div className={`absolute inset-0 bg-tertiary-900 rounded-md bg-opacity-60 lg:bg-opacity-30 flex py-3 items-start justify-between px-4 lg:translate-y-full translate-y-3/4 
+          lg:group-hover:translate-y-3/4
+          transition-all duration-[500ms]
+          ${image.id === 5 || image.id===10 ?   "translate-y-[85%]"   : ""  }
+
+          `}>
            <span className="text-tertiary-50 text-xs lg:text-lg font-semibold capitalize">
               {image.name}
             </span>        
-            <ArrowUpRight className="w-6  h-6 text-tertiary-50 hover:text-black hover:scale-125 transition-all duration-[400ms]" />   
+            <ArrowUpRight className="w-5 h-5  lg:w-6 lg:h-6 text-tertiary-50 hover:text-black hover:scale-125 transition-all duration-[400ms]" />   
           </div> 
           
           {/* <div
